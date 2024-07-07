@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        body{
+            background-color: rgb(14, 30, 57);
+            background-size: 200%;
+            transition: 1.3s all;
+        }
+        form{
+            background-color: rgb(14, 30, 57);
+            margin-left: 7%;
+            margin-top: 7%;
+            height: 270px;
+            width: 400px;
+            text-align: center;
+            box-shadow:4px 4px 4px 4px rgb(0, 0, 22);
+            color: rgb(255, 255, 255);
+            position: fixed;
+            transition: 1.3s all;
+        }
+        #back{
+            background-size: cover;
+            background-position: center;
+
+        }
+        .btn{
+            height: 30px;
+            width: 60px;
+            font-size: 18px;
+            margin-left: -30%;
+            background-image: linear-gradient(to right, rgb(74, 76, 189), rgb(0, 26, 255));
+            border-radius: 8px;
+            border: 1px solid;
+            cursor: grab;
+        }
+       #clr{
+        margin: 0%;
+       }
+        .btn:hover{
+            background-image: linear-gradient(to right, rgb(54, 55, 151), rgb(11, 11, 95));
+            transform: translate(0px, -2px);
+            color: rgb(192, 192, 192);
+            border-image: linear-gradient(to right, rgb(74, 76, 189), rgb(0, 26, 255));
+        }
+        .btn:active{
+            background-image: linear-gradient(to right, rgb(74, 76, 189), rgb(0, 26, 255));
+        }
+        label{
+            font-size: 20px;
+        }
+        input{
+            font-size: 18px;
+            width: 190px;
+            height: 23px;
+            border-radius: 8px;
+        }
+        #password{
+            margin-left: 10px;
+        }
+        #check1{
+            cursor: pointer;
+            margin-left: -20px;
+        }
+        #pass{
+            margin-left: 55px;
+        }
+        #allpassword{
+            display: flex;
+            gap: 8px;
+            background-color: rgb(255, 255, 255);
+            margin-left: 2%;
+            width: 300px;
+            height: 30px;
+            border-radius: 8px;
+        }  
+        #heading{
+            margin-left: 30%;
+            color: rgb(136, 50, 0);
+            margin-top: 74%;
+            position: fixed;
+        }
+        .all{
+            display: flex;
+            gap: -10px;
+        }
+        #hour{ 
+            margin-top: -32px;
+            margin-left: 3%;
+            color: rgb(202, 135, 80);
+            width: 120px;
+            box-shadow: 2px 2px 2px 2px black;
+            position: fixed;
+            background-color: rgb(14, 30, 54);
+            animation: timing linear 2s infinite 1s;
+            transition: 1.3s all;
+        }
+        #yea{
+            position: fixed;
+            background-color: rgb(14, 30, 54);
+            box-shadow: 2px 2px 2px 2px black;
+            width: 200px;
+            margin-top: 2px;
+            color: rgb(202, 135, 80);
+            animation: timing linear 2s infinite 1s;
+        }
+        #container{
+            background-color: rgb(190, 190, 190);
+            margin-left: 88%;
+            margin-top: 2px;
+            height: 34px;
+            width: 76px;
+            border-radius: 20px;
+            transition: 1.3s all;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        #content{
+            cursor: pointer;
+            background-color: rgb(20, 20, 20);
+            margin-left: 0%;
+            height: 34px;
+            width: 34px;
+            border-radius: 50%;
+            transition: 1.3s all; 
+            color: rgb(255, 81, 12);
+        }
+    </style>
+    <title>Login</title>
+</head>
+
+    <header>
+        <div id="container">
+            <div id="content" onclick="position()"></div> 
+        </div>
+    </header>
+
+<body id="body">
+    <h1 id="hour"></h1>
+    
+
+    <div id="back" style="background-image: url('c:\Users\et-admin\Pictures\Camera Roll\mysec.jpg');">
+        <form id="forms" target="_blank">
+           
+            <h1>Login form</h1>
+            <label id="foruser" for="username">User name:</label>
+            <input type="text" maxlength="16" id="username" placeholder="Username">
+            <br>
+            <br>
+            <div class="all">
+                <label id="pass" for="password">Password:</label>
+                <input type="password" maxlength="16" id="password" placeholder="Password">
+                <input type="checkbox" id="check1" onmouseover="show()" onclick="change()">
+            </div> <br>
+            <button class="btn" onclick="loading()" type="submit">Login</button>
+            <button class="btn" id="clr" onclick="clears()">Clear</button>
+        </form>
+    </div>    
+
+    <h1 id="heading"></h1>
+
+</body>
+
+<script>
+    function times(){
+    let hour =  document.getElementById("hour")
+    let date = new Date()
+    let b = date.getMinutes();
+    let a = date.getHours();
+    let c = date.getSeconds();
+    let d = date.getMilliseconds();
+    let e = date.getDay();
+    hour.textContent = (a)+":"+b+":"+c;
+}
+setInterval(times ,500)
+
+function year(){
+    let months = ["January","February","March","April",
+    "May","June","July","Augest","September","October","November",
+    "December"]
+
+    let days = ["", "Monday", "Tuesday", "Wednesday", "Thursday",
+            "Friday", "Saturday", "Sunday"]
+
+    let data = new Date();
+    let day = data.getDay();
+    let mun = data.getMonth();
+    let themonth = months[mun];
+    let theday = days[day];
+    let fulls = data.getFullYear();
+    let ment = document.getElementById("yea");
+    ment.textContent = theday+", "+themonth+" "+day+", "+fulls;
+
+
+}
+setInterval(year, 1000)
+</script>
+
+<script>
+function loading(){
+    event.preventDefault();
+    let username = document.getElementById("username");
+    let password =  document.getElementById("password");
+    let text = document.getElementById("heading");
+    
+
+    if (username.value === "") {
+        text.style.color = "rgb(121, 28, 28)";
+        text.textContent = "fjkjkj"
+    }
+
+    if(username.value === "") {
+        text.style.color = "rgb(121, 208, 208)";
+        text.textContent ="Enter the user name";
+        username.style.borderColor = "red";
+        
+    } 
+    
+    if(password.value === "") {
+        text.style.color = "rgb(121, 208, 208)";
+        text.textContent ="Enter the password";
+        password.style.borderColor = "red";
+        
+    } 
+
+    if(username.value === "") {
+        if (password.value === "") {
+        text.style.color = "rgb(121, 208, 208)";
+        text.textContent ="Enter information";
+        username.style.borderColor = "red";
+        password.style.borderColor = "red";
+        }
+    } 
+
+    if (username.value ==="youtube") {
+        if (password.value ==="youtube22") {
+           window.open("https://www.youtube.com", "_blank")
+            text.style.color = "rgb(71, 35, 0)";
+            text.textContent = "";
+            username.style.borderColor = "none";
+            password.style.borderColor = "none";
+        }
+    }
+    
+    if (username.value ==="keyboard") {
+        if (password.value ==="monkey") {
+            window.open("https://monkeytype.com/", "_blank")
+            text.style.color = "rgb(71, 35, 0)";
+            text.textContent = "";
+            username.style.borderColor = "none";
+            password.style.borderColor = "none";
+
+        }
+    }
+
+    if (username.value === "chat Gpt") {
+        if (password.value === "chatpoe") {
+            window.open("https://poe.com/chat/3f1f59h7uh1ng7df4m2")
+            text.style.color = "rgb(71, 35, 0)";
+            text.textContent = "";
+            username.style.borderColor = "none";
+            password.style.borderColor = "none";
+        }
+    }  
+    
+    if (username.value ==="football") {
+        if (password.value ==="footbal") {
+            window.open("https://www.808ball.com/", "_blank");
+            text.style.color = "rgb(71, 35, 0)";
+            text.textContent = "";
+            username.style.borderColor = "none";
+            password.style.borderColor = "none";
+        }
+    } 
+    
+    if (username.value =="sololearn") {
+        if (password.value ==="python") {
+            window.open("https://sololearn.com/");
+            text.style.color = "rgb(71, 35, 0)";
+            text.textContent = "";
+            username.style.borderColor = "none";
+            password.style.borderColor = "none";
+        }
+    }  
+
+    if (username.value =="google") {
+        if (password.value ==="search") {
+            window.open("https://www.google.com", "_blank");
+            text.style.color = "rgb(71, 35, 0)";
+            text.textContent = "";
+            username.style.borderColor = "none";
+            password.style.borderColor = "none";
+        }
+    } 
+
+    if (username.value =="telegram") {
+        if (password.value ==="message") {
+            window.open("https://web.telegram.org/k/", "_blank");
+            text.style.color = "rgb(71, 35, 0)";
+            text.textContent = "";
+            username.style.borderColor = "none";
+            password.style.borderColor = "none";
+        }
+    }  
+
+
+    if (username.value ==="school") {
+        if (password.value ==="noah1921") {
+            window.open("https://eeaacademy.com/loginpage", "_blank");
+            text.style.color = "rgb(71, 35, 0)";
+            text.textContent = "";
+            username.style.borderColor = "none";
+            password.style.borderColor = "none";
+                
+        }  
+    }
+
+}
+
+function clears(){
+    event.preventDefault();
+    let username = document.getElementById("username");
+    let password =  document.getElementById("password");
+    let text = document.getElementById("heading");
+    username.value = "";
+    password.value = "";
+    text.textContent = "";
+}
+
+function change(){
+    let thepass = document.getElementById("password");
+    let checking = document.getElementById("check1");
+    if (checking.checked === true) {
+        thepass.type = "text";
+    } else {
+        thepass.type = "password";
+    }
+}
+
+</script>
+
+<script>
+    var contain = document.getElementById("container");
+    var contents = document.getElementById("content");
+    var alls = document.getElementById("body");
+    var boxs = document.getElementById("forms");
+    var tim = document.getElementById("hour");
+    //var years = document.getElementById("yea");
+
+    function position(){
+        if (contents.style.marginLeft === "55%") {
+            contents.style.marginLeft = "0%";
+            contents.style.backgroundColor = "rgb(20, 23, 23)";
+            alls.style.backgroundColor = "rgb(14, 30, 57)";
+            boxs.style.backgroundColor = "rgb(14, 30, 57)";
+            boxs.style.color = "white"
+            tim.style.backgroundColor = "rgb(14, 30, 57)";
+            tim.style.color = "rgb(202, 134, 80)";
+            //years.style.backgroundColor = "rgb(14, 30, 57)";
+            //years.style.color = "rgb(202, 134, 80)";
+            contain.style.backgroundColor = "rgb(190, 190, 190)";
+
+        } else {
+            contents.style.marginLeft = "55%";
+            contents.style.backgroundColor = "rgb(200, 200, 200)";
+            boxs.style.backgroundColor = "rgb(49, 82, 250)";
+            boxs.style.color = "rgb(76, 21, 0)"
+            alls.style.backgroundColor = "rgb(49, 82, 250)";
+            //years.style.backgroundColor = "rgb(49, 82, 250)";
+            tim.style.backgroundColor = "rgb(49, 82, 250)";
+            tim.style.color = "rgb(73, 21, 0)";
+            //years.style.color = "rgb(73, 21, 0)";
+            contain.style.backgroundColor = "black";
+            
+        }
+    }
+
+let youtr = "https://www.youtube.com/watch?v=tVH4E0CQrK4"
+</script> 
+</html>
