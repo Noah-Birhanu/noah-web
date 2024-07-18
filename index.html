@@ -8,11 +8,23 @@
             background-size: 200%;
             transition: 1.3s all;
         }
-        form{
+        #forms{
             background-color: rgb(14, 30, 57);
             margin-left: 7%;
             margin-top: 7%;
             height: 270px;
+            width: 400px;
+            text-align: center;
+            box-shadow:4px 4px 4px 4px rgb(0, 0, 22);
+            color: rgb(255, 255, 255);
+            position: fixed;
+            transition: 1.3s all;
+        }
+        #searching{
+            background-color: rgb(14, 30, 57);
+            margin-left: 50%;
+            margin-top: 7%;
+            height: 200px;
             width: 400px;
             text-align: center;
             box-shadow:4px 4px 4px 4px rgb(0, 0, 22);
@@ -127,6 +139,29 @@
             transition: 1.3s all; 
             color: rgb(255, 81, 12);
         }
+        .bbtn{
+            height: 30px;
+            width: 60px;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-left: -20%;
+            background-image: linear-gradient(to right, rgb(74, 76, 189), rgb(0, 26, 255));
+            border-radius: 8px;
+            border: 1px solid;
+            cursor: grab;
+        }
+        .bbtn:hover{
+            background-image: linear-gradient(to right, rgb(54, 55, 151), rgb(11, 11, 95));
+            transform: translate(0px, -2px);
+            color: rgb(192, 192, 192);
+            border-image: linear-gradient(to right, rgb(74, 76, 189), rgb(0, 26, 255));
+        }
+        .bbtn:active{
+            background-image: linear-gradient(to right, rgb(74, 76, 189), rgb(0, 26, 255));
+        }
+        #sser{
+            margin-left: -50%;
+        }
     </style>
     <link rel="icon" href="c:\Users\This\Downloads\sky.jfif" type="image/x-icon">
         <title>Login</title>
@@ -158,12 +193,33 @@
             <button class="btn" onclick="loading()" type="submit">Login</button>
             <button class="btn" id="clr" onclick="clears()">Clear</button>
         </form>
-    </div>    
+    </div>
+
+    <form id="searching">
+        <h1 id="sser">Search</h1>
+        <input id="urls" type="text" placeholder="Search">
+        <br>
+        <button class="bbtn" type="submit" onclick="searchforgoogle()">Login</button>
+        <button id="clr" class="bbtn" id="cclear" onclick="clearurl()">Clear</button>
+    </form>
 
     <h1 id="heading"></h1>
 
 </body>
 
+<script>
+    var url = document.getElementById("urls");
+    function searchforgoogle(){
+        event.preventDefault();
+        var opening = "https://www.google.com/search?q=" + url.value;
+        window.open(opening)
+    }
+    function clearurl(){
+        event.preventDefault()
+        url.value = "";
+    }
+</script>
+    
 <script>
     function times(){
     let hour =  document.getElementById("hour")
@@ -381,6 +437,7 @@ function change(){
     var alls = document.getElementById("body");
     var boxs = document.getElementById("forms");
     var tim = document.getElementById("hour");
+    var searchbox = document.getElementById("searching")
     //var years = document.getElementById("yea");
 
     function position(){
@@ -389,7 +446,9 @@ function change(){
             contents.style.backgroundColor = "rgb(20, 23, 23)";
             alls.style.backgroundColor = "rgb(14, 30, 57)";
             boxs.style.backgroundColor = "rgb(14, 30, 57)";
-            boxs.style.color = "white"
+            boxs.style.color = "white";
+            searchbox.style.backgroundColor = "rgb(14, 30, 57)";
+            searchbox.style.color = "white";
             tim.style.backgroundColor = "rgb(14, 30, 57)";
             tim.style.color = "rgb(202, 134, 80)";
             //years.style.backgroundColor = "rgb(14, 30, 57)";
@@ -400,7 +459,9 @@ function change(){
             contents.style.marginLeft = "55%";
             contents.style.backgroundColor = "rgb(200, 200, 200)";
             boxs.style.backgroundColor = "rgb(49, 82, 250)";
-            boxs.style.color = "rgb(76, 21, 0)"
+            boxs.style.color = "rgb(76, 21, 0)";
+            searchbox.style.backgroundColor = "rgb(49, 82, 250)";
+            searchbox.style.color = "rgb(76, 21, 0)";
             alls.style.backgroundColor = "rgb(49, 82, 250)";
             //years.style.backgroundColor = "rgb(49, 82, 250)";
             tim.style.backgroundColor = "rgb(49, 82, 250)";
