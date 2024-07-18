@@ -267,35 +267,17 @@ function loading(){
     let password =  document.getElementById("password");
     let text = document.getElementById("heading");
     
+    if (username.value ==="facebook") {
+        if (password.value ==="dad!mom") {
+            window.open("https://facebook.com/", "_blank")
+            text.style.color = "rgb(71, 35, 0)";
+            text.textContent = "";
+            username.style.borderColor = "none";
+            password.style.borderColor = "none";
 
-    if (username.value === "") {
-        text.style.color = "rgb(121, 28, 28)";
-        text.textContent = "fjkjkj"
-    }
-
-    if(username.value === "") {
-        text.style.color = "rgb(121, 208, 208)";
-        text.textContent ="Enter the user name";
-        username.style.borderColor = "red";
-        
-    } 
-    
-    if(password.value === "") {
-        text.style.color = "rgb(121, 208, 208)";
-        text.textContent ="Enter the password";
-        password.style.borderColor = "red";
-        
-    } 
-
-    if(username.value === "") {
-        if (password.value === "") {
-        text.style.color = "rgb(121, 208, 208)";
-        text.textContent ="Enter information";
-        username.style.borderColor = "red";
-        password.style.borderColor = "red";
         }
-    } 
-
+    }
+    
     if (username.value ==="youtube") {
         if (password.value ==="youtube22") {
            window.open("https://www.youtube.com", "_blank")
