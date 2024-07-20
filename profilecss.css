@@ -18,7 +18,7 @@ body{
 #images{
     margin-left: 10%;
     background-color: transparent;
-    max-width: 400px;
+    max-width: 420px;
     gap: 20px;
     display: flex;
     flex-direction: column;
