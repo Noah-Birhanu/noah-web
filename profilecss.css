@@ -17,6 +17,7 @@ body{
 }
 #images{
     margin-left: 10%;
+    padding-right: 20px;
     background-color: transparent;
     max-width: 420px;
     gap: 20px;
