@@ -60,7 +60,7 @@ h3{
     gap: 30px;
     background-color: rgb(36, 35, 35);
     width: 400px;
-    height: 550px;
+    height: max-content;
 }
 .projects{
     margin-left: 20px;
