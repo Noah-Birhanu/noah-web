@@ -1,5 +1,5 @@
 function loading(){
-event.preventDefault();
+    event.preventDefault();
     let username = document.getElementById("username");
     let password =  document.getElementById("password");
     let text = document.getElementById("heading");
@@ -133,6 +133,26 @@ event.preventDefault();
         }
     }
 
+}
+
+function clears(){
+    event.preventDefault();
+    let username = document.getElementById("username");
+    let password =  document.getElementById("password");
+    let text = document.getElementById("heading");
+    username.value = "";
+    password.value = "";
+    text.textContent = "";
+}
+
+function change(){
+    let thepass = document.getElementById("password");
+    let checking = document.getElementById("check1");
+    if (checking.checked === true) {
+        thepass.type = "text";
+    } else {
+        thepass.type = "password";
+    }
 }
 
 function clears(){
