@@ -87,7 +87,7 @@ h3{
     display: flex;
     flex-direction: column;
     background-color: rgb(24, 24, 24);
-    gap: 10px;
+    gap: 20px;
 }
 #projectstext{
     margin-left: 15px;
@@ -101,7 +101,7 @@ h3{
     background-color: rgb(43, 43, 43);
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 20px;
 }
 button{
     margin-top: 14px;
