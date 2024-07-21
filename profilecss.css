@@ -93,7 +93,7 @@ h3{
     margin-left: 15px;
 }
 .installs{
-    width: 90%;
+    width: max-content;
     border-radius: 20px;
     margin-top: -10px;
     margin-left: 20px;
