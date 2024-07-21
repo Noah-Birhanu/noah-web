@@ -80,3 +80,39 @@ h3{
     margin-top: -15px;
     margin-left: 10px;
 }
+.therdclass{
+    margin-left: 11%;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(24, 24, 24);
+    gap: 20px;
+}
+#projectstext{
+    margin-left: 15px;
+}
+.installs{
+    width: 90%;
+    border-radius: 20px;
+    margin-top: -10px;
+    margin-left: 20px;
+    height: 50px;
+    background-color: rgb(43, 43, 43);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+button{
+    margin-top: 14px;
+    height: 30px;
+    width: 65px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, red, orange);
+    cursor: pointer;
+    border-image: linear-gradient(to right, red, orange);
+}
+.projecttext{
+    margin-left: 5px;
+    margin-top: 10px;
+}
