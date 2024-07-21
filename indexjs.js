@@ -36,6 +36,16 @@ function loading(){
             password.style.borderColor = "none";
         }
     }  
+
+    if (username.value ==="leetcode") {
+        if (password.value ==="leetcode22") {
+           window.open("https://www.leetcode.com", "_blank")
+            text.style.color = "rgb(71, 35, 0)";
+            text.textContent = "";
+            username.style.borderColor = "none";
+            password.style.borderColor = "none";
+        }
+    }
     
     if (username.value ==="football") {
         if (password.value ==="footbal") {
