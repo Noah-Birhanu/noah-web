@@ -1,0 +1,115 @@
+body{
+    background-color: black;
+    color: white;
+    display: flex;
+}
+.everycontent{
+    display: flex;
+    flex-flow: wrap;
+    width: 84pc;
+    gap: 50px;
+    text-align: center;
+    transition: all 0.7s;
+}
+.allcontent{
+    margin-top: 15%;
+    height: 300px;
+    width: 400px;
+    color: white;
+    gap: 0.5px;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all 0.7s;
+}
+.firstcontent{
+    box-shadow: 0 0 80px rgb(0, 156, 161);
+    border: 4px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(39, 39, 39);
+    animation: borderani 3s linear 0.1s infinite normal;
+    transition: all 0.7s;
+}
+@keyframes borderani {
+    0%{border-top: 3px solid;border-image: linear-gradient(to right, red, blue) 3;}
+    25%{border-right: 3px solid;border-image: linear-gradient(to right, red, blue) 3;}
+    50%{border-bottom: 3px solid;border-image: linear-gradient(to right, red, blue) 3;}
+    75%{border-left: 3px solid;border-image: linear-gradient(to right, red, blue) 3;}
+    100%{border-left: 3px solid;border-image: linear-gradient(to right, red, blue) 3;}
+}
+.secondcontent{
+    text-align: left;
+    background-color: rgb(63, 63, 63);
+    width: 100%;
+    display: none;
+}
+.allcontent:hover .firstcontent{
+    margin-top: -10%;
+    background-color: rgb(126, 77, 85);
+    height: 30%;
+    display: block;
+}
+.allcontent:hover .secondcontent{
+    margin-top: -10%;
+    height: 70%;
+    display: flex;
+}
+.allcontent:hover .title{
+    margin-top: 7%;
+}
+.language{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 8px;
+    margin-top: -14px;
+    column-gap: 30px;
+}
+#python .line{
+    margin-top: 5px;
+    height: 3px;
+    width: 60px;
+    background-color: rgb(0, 17, 255);
+}
+#java .line{
+    margin-top: 5px;
+    height: 3px;
+    width: 30px;
+    background-color: rgb(0, 4, 255);
+}
+#js .line{
+    margin-top: 5px;
+    height: 3px;
+    width: 50px;
+    background-color: rgb(0, 4, 255);
+}
+#html .line{
+    margin-top: 5px;
+    height: 3px;
+    width: 80px;
+    background-color: rgb(0, 4, 255);
+}
+#css .line{
+    margin-top: 5px;
+    height: 3px;
+    width: 70px;
+    background-color: rgb(0, 4, 255);
+}
+#cp .line{
+    margin-top: 5px;
+    height: 3px;
+    width: 30px;
+    background-color: rgb(0, 4, 255);
+}
+.title{
+    margin-top: 30%;
+}
+.contenttext{
+    margin-left: 20px;
+}
+#readmore{
+    height: 10px;
+    width: 120px;
+    color: rgb(109, 109, 255);
+    margin-top: 20%;
+    margin-left: -39%;
+}
