@@ -6,7 +6,8 @@ body{
     display: block;
     margin-top: 1%;
     margin-left: 6%;
-    max-width: 450px;
+    width: 400px;
+    max-width: max-content;
     min-height: 200px;
     background-color: rgb(148, 74, 87);
     color: white;
