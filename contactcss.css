@@ -1,0 +1,59 @@
+body{
+    background-color: rgb(148, 74, 87);
+}
+#form{
+    padding: 20px;
+    display: block;
+    margin-top: 1%;
+    margin-left: 6%;
+    max-width: 450px;
+    min-height: 200px;
+    background-color: rgb(148, 74, 87);
+    color: white;
+    border-radius: 2%;
+    box-shadow: 0px 0px 10px black;
+}
+label{
+    margin-left: 5px;
+}
+#messages{
+    min-width: 220px;
+    min-height: 25px;
+    margin-top: 10px;
+    margin-left: 137px;
+    border-radius: 10px;
+    border: none;
+}
+#yourname{
+    height: 25px;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 202px;
+    border-radius: 10px;
+    border: none;
+}
+#email{
+    height: 25px;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 117px;
+    border-radius: 10px;
+    border: none;
+}
+#sends{
+    background-image: linear-gradient(to right, blue, rgb(121, 13, 121));
+    height: 26px;
+    width: 60px;
+    margin-top: 10px;
+    margin-left: 300px;
+    border-radius: 7px;
+    border: none;
+}
+#clears{
+    background-image: linear-gradient(to right, blue, rgb(121, 13, 121));
+    height: 26px;
+    width: 60px;
+    transform: translate(10px, 0px);
+    border-radius: 7px;
+    border: none;
+}
