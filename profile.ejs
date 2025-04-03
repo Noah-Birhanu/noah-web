@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="volunteer.png">
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+            height: auto;
+            color: white;
+        }
+
+        .asked{
+            margin:100px auto;
+            height: max-content;
+            min-height: 200px;
+            width: 50%;
+            background-color: rgb(43, 43, 43);
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            transition: all 0.2s;
+        }
+
+        #asked_items{
+            margin-top: 150px;
+            margin-left: 10%;
+            font-size: 1.4em;
+            list-style-type: none;
+        }
+
+        .card{
+            margin:100px auto;
+            height: 350px;
+            width: 50%;
+            background-color: rgb(120, 120, 120);
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            transition: all 0.2s;
+        }
+
+        img{
+            margin: 5px;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+        }
+
+        #name{
+            margin-top: -100px;
+            margin-left: 160px;
+        }
+
+        .card li{
+            margin-left: 160px;
+            font-size: 1.4em;
+            list-style-type: none;
+        }
+
+        .line{
+            height: 3px;
+            width: 90%;
+            margin-left: 5%;
+            background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 4, 255));
+            border-radius: 5px;
+        }
+
+        .achievements{
+            margin: 50px auto;
+            height: 400px;
+            width: 50%;
+            background-color: rgb(197, 197, 197);
+            transition:all 0.2s;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            color: black;
+        }
+
+        h3{
+            margin-top: 15px;
+            margin-left: 15px;
+        }
+
+        .first_line{
+            height: 2px;
+            background-color: rgb(197, 197, 197);
+        }
+
+        .percent{
+            margin-top: -40px;
+            margin-left: 50%;
+        }
+
+        .go{
+            margin-top: -40px;
+            margin-left: 70%;
+            height: 33px;
+            width: 65px;
+            background-color: green;
+            color: black;
+            align-content: center;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.1s;
+        }
+
+        .go:hover{
+            background-color: rgb(0, 179, 0);
+            color: rgb(214, 214, 214);
+        }
+
+        .go:active{
+            background-color: green;
+            color: black;
+        }
+        @media screen and (max-width:800px) {
+            .card{
+                width: 400px;
+            }
+
+            .asked{
+                width: 400px;
+            }
+
+            .achievements{
+                width: 400px;
+            }
+
+        }
+    </style>
+</head>
+<body background="volunteer-bg.webp">
+    <!-- <div class="container"> -->
+    <div class="card">
+        <img src="downloaded/thebatman">
+        <h2 id="name"><%= user.username %></h2>
+        <li>⚡You donated 0 Birr</li>
+        <li id="asked-times">You have been asked <%= asked.length %> time(s)</li>
+        <li>⚡Achievements 0</li>
+    </div>
+
+    <div class="asked">
+        <ul id="asked_items">
+            <% for (let i = 0; i < asked.length; i++) { %>
+                <li>You were asked: <%= asked[i].amount %> Birr%></li>
+            <% } %>
+        </ul>
+    </div>
+
+    <div class="achievements">
+        <div class="first_line"></div>
+
+        <h3>Donate 1000 Birr </h3>
+        <h3 class="percent">0%</h3>
+        <div class="line"></div>
+
+        <h3>Help 4 organizations</h3>
+        <h3 class="percent">0%</h3>
+        <div class="line"></div>
+
+        <h3>Donate 3000 Birr </h3>
+        <h3 class="percent">0%</h3>
+        <div class="line"></div>
+
+        <h3>Help 6 organizations</h3>
+        <h3 class="percent">0%</h3>
+        <div class="line"></div>
+
+        <h3>Donate 7000 Birr </h3>
+        <h3 class="percent">0%</h3>
+        <div class="line"></div>
+
+        <h3>Help 10 organizations</h3>
+        <h3 class="percent">0%</h3>
+        <div class="line"></div>
+
+    </div>
+    
+   
+</body>
+<script>
+    const asked = document.getElementById("asked-times");
+    const asked_items = document.getElementById("asked_items");
+    const asked_times = asked.length;
+    if(asked_times == 0){
+        asked.style.display = "none";
+        asked_items.style.display = "none";
+    }
+    else{
+        asked.style.display = "block";
+        asked_items.style.display = "block";
+    }
+</script>
+</html>

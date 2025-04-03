@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="volunteer-opp.css">
+</head>
+<body background="volunteer-bg.webp">
+    <h2>In this page there are many Volunteers who can help you</h2>
+    <div class="container">
+        <% for (let i = 0; i < volunteers.length; i++) { %>
+            <form class="card" action="/volunteer-ask" method="post">
+                <img src="User.svg">
+                <h3 class="text"><%= volunteers[i].username %> ID <%= volunteers[i].id %></h3>
+                <input type="hidden" name="asker_id" value='<%= user.id %>'>
+                <input type="hidden" name="asked_id" value='<%= volunteers[i].id %>'>
+                <input type="number" class="num" name="amount" id="nums">
+                <textarea rows="2" columns="25" id="why"></textarea>
+                <input type="submit" class="ask" value="ASK" id="asks">
+            </form> 
+          <% } %>    
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="volunteer-opp.js"></script> 
+    
+</body>
+</html>

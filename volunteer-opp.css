@@ -1,0 +1,102 @@
+body{
+    width: auto;
+    height: auto;
+    background-color: transparent;
+}
+
+textarea{
+    margin-left: 5px;
+    display: none;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    margin-left: 25px;
+    transition: 0.2s all;
+}
+
+.container{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.card{
+    margin-left: 10px;
+    height: 250px;
+    width: 250px;
+    background-color: rgb(122, 122, 122);
+    color: white;
+    cursor: default;
+    border-radius: 10px;
+    transition: 0.2s all;
+}
+
+.text{
+    margin: -20px 15px;
+    font-size: 1.3em;
+}
+.num{
+    height: 20px;
+    margin-top: -15px;
+    margin-left: 5px;
+    display: none;
+    transition: all 0.3s;
+}
+
+.ask{
+    height: 30px;
+    width: 20%;
+    margin-top: 5px;
+    margin-left: 5px;
+    display: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 8px;
+    border: 0px;
+}
+
+.card:hover{
+    background-color: rgb(121, 121, 121);
+    color: rgb(255, 255, 255);
+    height: 300px;
+    width: 300px;
+    textarea{
+        display: block;
+    }
+    img{
+        height: 150px;
+        width: 150px;
+    }
+    .num{
+        display: block;
+    }
+    .text{
+        display: none;
+    }
+    .ask{
+        display: block;
+    }
+}
+
+.ask:hover{
+    background-color: black;
+    color: white;
+}
+
+/* Added responsive styles */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 1em);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}

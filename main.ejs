@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer's Community</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="icon" href="volunteer.png">
+</head>
+<body background="volunteer-bg.webp">
+    <header>
+        <div class="nav" id="home" onclick="homes()"><img class="icons" src="HomeOutline.svg"> Home</div>
+        <div class="nav" id="about" onclick="next('about?user_id=<%= user.id %>')"><img class="icons" src="User (1).svg"> About Us</div>
+        <div class="nav" id="volunteer" onclick="next('volunteer-opp?user_id=<%= user.id %>')"><img class="icons" src="VolunteerActivismOutlined.svg"> Volunteery opportunities</div>
+        <div class="nav" id="org" onclick="next('org?user_id=<%= user.id %>')"><img class="icons" src="Organization12Regular.svg"> Organizations</div>
+        <div id="profile" class="profile" onclick="next('profile?user_id=<%= user.id %>')"><img src="UserAvatar.svg"></div>
+    </header>
+    <img id="image" src="volunteer.png">
+    <div id="line"></div>
+
+    <main id="main_text">
+        <h2 id="welcome">Welcome to <span>Volunteer's Community, <%= user.username %></span></h2>
+        <p style="margin-top: -25px; text-decoration: underline;">Connecting Volunteers with Organizations in Need</p>
+        <div class="texts" id="first">
+            <p>At <span>Volunteer's Community</span>, we believe in the power of community and the impact that individuals can make when they come together for a common cause. Our platform serves as a bridge between passionate volunteers and organizations that require support in various projects and initiatives.</p>
+            <div class="image-c">
+                <img class="activity" src="volunteer-activity5.jfif">
+            </div>
+        </div>
+
+        <div class="texts">
+            <div class="headings">
+                <h2>How It Works</h2>
+                <p>Explore a diverse range of volunteering opportunities posted by organizations dedicated to making a difference. Whether you are interested in environmental conservation, community service, education, or humanitarian aid, you can find projects that align with your interests and skills.</p>
+            </div>
+            <div class="image-c">
+                <img class="activity" src="volunteer-activity.jfif">
+            </div>
+        </div>
+
+        <div class="texts">
+            <div class="headings">
+                <h2>Get Involved</h2>
+                <p>Join us in creating a positive impact on communities and society as a whole. Whether you are an individual looking to give back or an organization seeking dedicated volunteers, <span>Volunteer's Community</span> is here to facilitate meaningful connections and collaborations.</p>
+            </div>
+            <div class="image-c">
+                <img class="activity" src="volunteer-activity4.jfif">
+            </div>
+        </div>
+
+        <div class="texts">
+            <div class="headings">
+                <h2>Make a Difference</h2>
+                <p>Join us in creating a positive impact on communities and society as a whole. Whether you are an individual looking to give back or an organization seeking dedicated volunteers, <span>Volunteer's Community</span> is here to facilitate meaningful connections and collaborations.</p>
+            </div>
+            <div class="image-c">
+                <img class="activity" src="volunteer-activity2.jfif">
+            </div>
+        </div>
+
+        <div class="texts">
+            <div class="headings">
+                <h2>Get Started Today</h2>
+                <p>Sign up to become a volunteer or register your organization to post volunteer opportunities. Together, we can drive positive change and build a brighter future for all.</p>
+                <p>Thank you for being a part of our community and for your commitment to making a difference in the world.</p>
+                <p>Let's make a difference together!</p>
+            </div>
+            <div class="image-c">
+                <img class="activity" src="volunteer-activity3.jfif">
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy;2O25 Volunteer's Community. All Rights Reserved.</p>
+    </footer>
+
+</body>
+<script src="js.js">
+   
+</script>
+<script>
+    localStorage.setItem('user', `<%= user.username %>`);
+    localStorage.setItem('id', `<%= user.id %>`);
+</script>
+<script>
+    const startTimer = () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => location.reload(), inactivityTime);
+    };
+
+    document.addEventListener('mousemove', startTimer);
+    document.addEventListener('keypress', startTimer);
+    document.addEventListener('click', startTimer);
+
+    startTimer();
+</script>
+</html>

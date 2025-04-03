@@ -1,0 +1,93 @@
+body{
+    width: auto;
+    height: auto;
+    background-color: transparent;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    margin-left: 25px;
+    transition: all 0.3s;
+}
+
+.container{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.card{
+    height: 250px;
+    width: 250px;
+    background-color: rgb(83, 83, 83);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.2s all;
+}
+
+.text{
+    margin: -20px 15px;
+    font-size: 1.3em;
+}
+
+.num{
+    height: 20px;
+    margin-top: -15px;
+    margin-left: 5px;
+    display: none;
+    transition: all 0.3s;
+}
+
+.help{
+    height: 30px;
+    width: 80px;
+    margin-top: 5px;
+    margin-left: 5px;
+    display: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 8px;
+    border: 0px;
+}
+
+.card:hover{
+    background-color: rgb(121, 121, 121);
+    color: rgb(255, 255, 255);
+    transform: scale(1.04);
+    img{
+        height: 150px;
+        width: 150px;
+    }
+    .num{
+        display: block;
+    }
+    .text{
+        display: none;
+    }
+    .help{
+        display: block;
+    }
+}
+
+.help:hover{
+    background-color: black;
+    color: white;
+}
+
+/* Added responsive styles */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 1em);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}
